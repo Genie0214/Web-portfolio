@@ -1,0 +1,114 @@
+:root {
+  --fixed-m-x: 15px;
+  --fixed-m-y: 20px;
+  --grid-m-x: 15px;
+  --grid-m-y: 20px;
+  --logo-h: 50px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.years {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.fixed {
+  position: fixed;
+}
+a.fixed, .fixed a {
+  color: #000;
+  text-decoration: none;
+}
+
+.fixed--pos-tl {
+  top: var(--fixed-m-y);
+  left: var(--fixed-m-x);
+}
+.fixed--pos-tr {
+  top: var(--fixed-m-y);
+  right: var(--fixed-m-x);
+}
+.fixed--pos-br {
+  right: var(--fixed-m-x);
+  bottom: var(--fixed-m-y);
+  font-size: 14px;
+}
+.fixed--pos-bl {
+  right: calc(var(--fixed-m-x) + 64px + 300px);
+  bottom: var(--fixed-m-y);
+  left: var(--fixed-m-x);
+  max-width: 33ch;
+  margin-block: 0;
+  line-height: 24px;
+  text-wrap: balance;
+}
+.fixed--role-title {
+  width: 120px;
+  aspect-ratio: 700/200;
+}
+.fixed--role-about {
+  margin-block: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+.fixed--role-list {
+  padding-left: 0;
+  margin-block: 10px;
+  line-height: 28.8px;
+  list-style: none;
+}
+
+.work {
+  scroll-snap-align: center;
+  display: grid;
+  grid-template-rows: minmax(calc(2 * var(--fixed-m-y) + var(--logo-h)), 1fr) auto 5lh minmax(calc(2 * var(--fixed-m-y)), 0.5fr);
+  grid-template-columns: minmax(var(--fixed-m-x), 1fr) minmax(0, 420px) minmax(var(--fixed-m-x), 1fr);
+  min-height: 100svh;
+}
+a.work, .work a {
+  color: #4f4f4f;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.work__img {
+  grid-row: 2;
+  grid-column: 2;
+  align-content: center;
+  justify-self: center;
+  max-width: 350px;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.4);
+}
+.work__text {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+}
+.work__title {
+  padding-top: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.work__link {
+  margin-block: 1lh 0;
+  color: #fff;
+}
