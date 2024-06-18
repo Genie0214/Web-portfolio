@@ -1,0 +1,94 @@
+:root {
+  --fixed-m-x: 15px;
+  --fixed-m-y: 20px;
+  --grid-m-x: 15px;
+  --grid-m-y: 20px;
+  --logo-h: 50px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.title-serve {
+  font-weight: 500;
+  color: darkgray;
+}
+
+.desc-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.fixed {
+  position: fixed;
+}
+a.fixed, .fixed a {
+  color: #000;
+  text-decoration: none;
+}
+
+.fixed--pos-tl {
+  top: var(--fixed-m-y);
+  left: var(--fixed-m-x);
+}
+.fixed--pos-tr {
+  top: var(--fixed-m-y);
+  right: var(--fixed-m-x);
+}
+.fixed--pos-bl {
+  right: calc(var(--fixed-m-x) + 64px + 300px);
+  bottom: var(--fixed-m-y);
+  left: var(--fixed-m-x);
+  max-width: 33ch;
+  margin-block: 0;
+  line-height: 24px;
+  text-wrap: balance;
+}
+.fixed--role-title {
+  width: 120px;
+  aspect-ratio: 700/200;
+}
+.fixed--role-about {
+  margin-block: 0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  min-height: 100vh;
+}
+.work__img {
+  max-width: 500px;
+  margin: 30px;
+  margin-right: 300px;
+}
+.work__text {
+  grid-row: 3;
+  grid-column: 2;
+  text-align: center;
+}
+.work__title {
+  padding-top: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.work__link {
+  margin-block: 1lh 0;
+  color: #fff;
+}
